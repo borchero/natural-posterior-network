@@ -1,0 +1,19 @@
+# MacOS
+.DS_Store
+
+# Editor
+.vscode/
+.python-version
+
+# Caches
+_cache_*
+__pycache__/
+lightning_logs/
+checkpoints/
+.ipynb_checkpoints/
+wandb/
+examples/artifacts/
+
+# Dependencies
+.venv/
+node_modules/

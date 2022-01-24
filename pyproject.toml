@@ -1,0 +1,80 @@
+[tool.poetry]
+authors = ["Oliver Borchert <borchero@in.tum.de>"]
+description = "Official PyTorch Implementation of the Natural Posterior Network."
+license = "MIT"
+name = "natural-posterior-network"
+packages = [
+  {include = "natpn"},
+]
+version = "1.0.0"
+
+[tool.poetry.scripts]
+train = "natpn.train:main"
+
+[tool.poetry.dependencies]
+Pillow = "^8.4.0"
+click = "^8.0.3"
+jupyter = "^1.0.0"
+lightkit = "^0.3.5"
+lmdb = "^1.2.1"
+matplotlib = "^3.5.1"
+opencv-python = "^4.5.4"
+openpyxl = "^3.0.9"
+pandas = "^1.3.5"
+python = ">=3.8,<3.10"
+pytorch-lightning = "^1.5.6"
+scipy = "^1.7.3"
+torch = "^1.10.1"
+torchmetrics = "^0.6.2"
+torchvision = "^0.11.2"
+wandb = "^0.12.9"
+xlrd = "^2.0.1"
+
+[tool.poetry.dev-dependencies]
+black = "^21.12b0"
+isort = "^5.10.1"
+pylint = "^2.12.2"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]
+
+[tool.pylint.messages_control]
+disable = [
+  "arguments-differ",
+  "duplicate-code",
+  "missing-module-docstring",
+  "invalid-name",
+  "no-self-use",
+  "too-few-public-methods",
+  "too-many-ancestors",
+  "too-many-arguments",
+  "too-many-branches",
+  "too-many-locals",
+  "too-many-instance-attributes",
+]
+
+[tool.pylint.typecheck]
+generated-members = [
+  "torch.*",
+]
+
+[tool.pyright]
+reportIncompatibleMethodOverride = false
+reportPrivateImportUsage = false
+reportUnknownArgumentType = false
+reportUnknownMemberType = false
+reportUnknownVariableType = false
+typeCheckingMode = "strict"
+
+[tool.black]
+line-length = 99
+
+[tool.isort]
+force_alphabetical_sort_within_sections = true
+include_trailing_comma = true
+known_first_party = "natpn"
+line_length = 99
+lines_between_sections = 0
+profile = "black"
+skip_gitignore = true
