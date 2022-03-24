@@ -3,9 +3,13 @@
 This repository provides the official implementation of the Natural Posterior Network (NatPN) and
 the Natural Posterior Ensemble (NatPE) as presented in the following paper:
 
-[Natural Posterior Network: Deep Bayesian Predictive Uncertainty for Exponential Family Distributions](https://openreview.net/pdf?id=tV3N0DWMxCg)<br>
+[Natural Posterior Network: Deep Bayesian Predictive Uncertainty for Exponential Family Distributions](https://arxiv.org/abs/2105.04471)<br>
 Bertrand Charpentier*, Oliver Borchert*, Daniel Zügner, Simon Geisler, Stephan Günnemann<br>
 _International Conference on Learning Representations, 2022_
+
+[Paper](https://arxiv.org/abs/2105.04471) | [Video](https://youtu.be/qMtpK0ECD8c)
+
+![Model Overview](./images/model.png)
 
 ## Features
 
