@@ -22,4 +22,4 @@ class NormalOutput(Output):
     def forward(self, x: torch.Tensor) -> D.Likelihood:
         z = self.linear.forward(x)
         loc, log_precision = chunk_squeeze_last(z)
-        return D.Normal(loc, log_precision.exp())
+        return D.Normal(loc, log_precision.exp() + 1e-10)
