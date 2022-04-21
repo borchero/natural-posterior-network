@@ -284,7 +284,7 @@ class NaturalPosteriorNetwork(BaseEstimator):
             trainer.fit(warmup_module, data)
 
         # Run training
-        trainer_checkpoint = ModelCheckpoint(tmp_dir / "training", monitor="val/loss")
+        trainer_checkpoint = ModelCheckpoint(tmp_dir / "training", monitor="val/loss", mode='min')
 
         logging.getLogger("pytorch_lightning").setLevel(
             logging.INFO if self.warmup_epochs == 0 else level
@@ -311,7 +311,7 @@ class NaturalPosteriorNetwork(BaseEstimator):
 
         # Run fine-tuning
         if self.finetune:
-            finetune_checkpoint = ModelCheckpoint(tmp_dir / "finetuning", monitor="val/log_prob")
+            finetune_checkpoint = ModelCheckpoint(tmp_dir / "finetuning", monitor="val/log_prob", mode='max')
             trainer = self.trainer(
                 accumulate_grad_batches=data.gradient_accumulation_steps,
                 callbacks=[finetune_checkpoint],
